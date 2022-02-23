@@ -6,8 +6,9 @@
   <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
+    @include('./layouts/nav')
   <h1 class="text-3xl font-bold underline">
-    Hello world!
+    Hello ettounani!
   </h1>
 </body>
 </html>
