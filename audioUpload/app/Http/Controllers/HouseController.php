@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\House;
 use Illuminate\Http\Request;
 
 class HouseController extends Controller
@@ -13,7 +14,7 @@ class HouseController extends Controller
      */
     public function index()
     {
-        //
+        return view('./layouts/main');
     }
 
     /**
@@ -25,7 +26,6 @@ class HouseController extends Controller
     {
         return view('./layouts/form');
     }
-
     /**
      * Store a newly created resource in storage.
      *
@@ -34,7 +34,25 @@ class HouseController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validation = $request->validate([
+            'price' => 'required',
+            'tage' => 'required',
+            'image' => ['image','mimes:jpeg,png,jpg,gif,svg','max:2048'],
+            'description' => 'required',
+            'place' => 'required',
+        ]);
+
+        $imageName = time() . '.' . $request->image->extension();
+        $request->image->storeAs('profil_images', $imageName, 'public');
+
+        House::create([
+            'price' =>  $request->price,
+            'tage' =>  $request->tage,
+            'image' =>  $imageName,
+            'description' =>  $request->description,
+            'place' =>  $request->place,
+        ]);
+        return redirect()->route('house.index');
     }
 
     /**
