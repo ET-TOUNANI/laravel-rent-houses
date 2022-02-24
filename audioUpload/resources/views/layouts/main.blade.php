@@ -12,7 +12,7 @@
 }
 
 </style>
-<body class="antialiased bg-gray-200 text-gray-900 font-sans p-6">
+
   <div class="container mx-auto">
     <div class="flex flex-wrap -mx-4">
       <div class="w-full sm:w-1/2 md:w-1/2 xl:w-1/4 p-4">
@@ -210,4 +210,3 @@
 
     </div>
   </div>
-</body>
