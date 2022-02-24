@@ -1,3 +1,7 @@
+@extends('../app/app')
+@section('content')
+    
+
 <div class=" min-h-screen flex items-center">
    <div class="w-full">
      <h2 class="text-center text-blue-400 font-bold text-2xl uppercase mb-10">add some music</h2>
@@ -37,3 +41,4 @@
      </div>
    </div>
  </div>
+ @endsection
