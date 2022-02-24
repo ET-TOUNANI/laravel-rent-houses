@@ -7,6 +7,7 @@
 </head>
 <body class="">
     @include('./layouts/nav')
-    @include('./layouts/main')
+    {{-- @include('./layouts/main') --}}
+    @include('./layouts/form')
 </body>
 </html>
