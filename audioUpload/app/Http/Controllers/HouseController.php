@@ -14,7 +14,8 @@ class HouseController extends Controller
      */
     public function index()
     {
-        return view('./layouts/main');
+        $houses=House::all();
+        return view('./welcome')->with('houses',$houses);
     }
 
     /**
